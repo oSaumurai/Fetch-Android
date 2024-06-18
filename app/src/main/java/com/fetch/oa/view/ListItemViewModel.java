@@ -50,7 +50,6 @@ public class ListItemViewModel extends ViewModel {
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 if (response.isSuccessful()) {
-                    assert response.body() != null;
                     String json = response.body().string();
                     List<ListItem> items = new Gson().fromJson(json, new TypeToken<List<ListItem>>(){}.getType());
 
